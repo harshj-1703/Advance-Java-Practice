@@ -12,4 +12,45 @@
     <servlet-name>DemoWebConfigServlet</servlet-name>
     <url-pattern>/servletwebconfig</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+    <servlet-name>HomePageServlet</servlet-name>
+    <servlet-class>HomePageServlet</servlet-class>
+    <init-param>
+      <param-name>page_name</param-name>
+      <param-value>Home Page</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HomePageServlet</servlet-name>
+    <url-pattern>/homepageservlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ContactPage</servlet-name>
+    <servlet-class>ContactPage</servlet-class>
+    <init-param>
+      <param-name>pname</param-name>
+      <param-value>Shyam</param-value>
+    </init-param>
+    <init-param>
+      <param-name>contact_no</param-name>
+      <param-value>1111111111</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ContactPage</servlet-name>
+    <url-pattern>/httpcontactpage</url-pattern>
+  </servlet-mapping>
+
+  <context-param>
+    <param-name>app_name</param-name>
+    <param-value>Demo App</param-value>
+  </context-param>
+
+  <welcome-file-list>
+    <welcome-file>login.html</welcome-file>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
 </web-app>

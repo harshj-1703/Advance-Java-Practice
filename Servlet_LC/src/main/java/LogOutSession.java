@@ -15,6 +15,10 @@ public class LogOutSession extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession(false);
+//        if(session.isNew())
+//        {
+//            resp.sendRedirect("login.html");
+//        }
         session.invalidate();
         resp.sendRedirect("login.html");
 //        session.getId();

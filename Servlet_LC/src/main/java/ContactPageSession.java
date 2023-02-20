@@ -19,6 +19,7 @@ public class ContactPageSession extends HttpServlet {
         PrintWriter out = resp.getWriter();
         HttpSession session = req.getSession(false);
         String unm = session.getAttribute("unm").toString();
+        req.getRequestDispatcher("menu.html").include(req,resp);
         out.println("Welcome on contact page "+unm);
     }
 }

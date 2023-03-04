@@ -5,6 +5,40 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
+    <servlet-name>FilterTest</servlet-name>
+    <servlet-class>FilterTest</servlet-class>
+  </servlet>
+  <filter>
+    <filter-name>TestFilter</filter-name>
+    <filter-class>TestFilter</filter-class>
+  </filter>
+  <filter>
+    <filter-name>AuthFilter</filter-name>
+    <filter-class>AuthFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>TestFilter</filter-name>
+    <url-pattern>/homepagefilter</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>AuthFilter</filter-name>
+    <url-pattern>/homepagefilter</url-pattern>
+  </filter-mapping>
+
+  <servlet-mapping>
+    <servlet-name>FilterTest</servlet-name>
+    <url-pattern>/filter_test</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>HomePageFilter</servlet-name>
+    <servlet-class>HomePageFilter</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HomePageFilter</servlet-name>
+    <url-pattern>/homepagefilter</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
     <servlet-name>DemoWebConfigServlet</servlet-name>
     <servlet-class>WebConfigServlet</servlet-class>
   </servlet>

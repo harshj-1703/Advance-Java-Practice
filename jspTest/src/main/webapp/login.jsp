@@ -14,7 +14,7 @@
             String pwd = request.getParameter("password");
             if(usr.equals(pwd))
             {
-                out.println("Login Successful");
+                response.sendRedirect("index.jsp");
             }
             else
             {

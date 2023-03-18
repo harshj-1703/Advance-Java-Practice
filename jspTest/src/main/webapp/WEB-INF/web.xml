@@ -4,4 +4,23 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+    <servlet-name>testjsp</servlet-name>
+    <jsp-file>/scope_test.jsp</jsp-file>
+    <init-param>
+      <param-name>pageName</param-name>
+      <param-value>Scope Test Page</param-value>
+    </init-param>
+  </servlet>
+  <context-param>
+    <param-name>appName</param-name>
+    <param-value>JSP Demo</param-value>
+  </context-param>
+  <servlet-mapping>
+    <servlet-name>testjsp</servlet-name>
+    <url-pattern>/test</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>page_directive.jsp</welcome-file>
+  </welcome-file-list>
 </web-app>

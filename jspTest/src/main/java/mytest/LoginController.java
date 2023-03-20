@@ -23,6 +23,11 @@ public class LoginController extends HttpServlet {
             req.setAttribute("userdetails",user);
             req.getRequestDispatcher("dashboard.jsp").forward(req,resp);
         }
+        else
+        {
+            req.setAttribute("userdetails",user);
+            req.getRequestDispatcher("error.jsp").forward(req,resp);
+        }
 //        if(uname.equalsIgnoreCase(password))
 //        {
 //            req.getRequestDispatcher("dashboard.jsp").forward(req,resp);

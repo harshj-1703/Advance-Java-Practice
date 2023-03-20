@@ -4,13 +4,13 @@
 <title></title>
 </head>
 <body>
-    this is dashboard
+    Error
     <%
         AuthUser user = (AuthUser)request.getAttribute("userdetails");
     %>
     <br>
     <%
-        out.println("Welcome "+user.getUsername());
+        out.println("Wrong password for : "+user.getUsername());
     %>
 </body>
 </html>

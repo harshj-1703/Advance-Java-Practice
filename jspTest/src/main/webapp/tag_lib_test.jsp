@@ -5,3 +5,10 @@
 <c:set value="${10*2}" var="age" scope="session" />
 <c:out value="${age}"/>
 
+<c:catch var="myexception">
+    <% int a = 10/0; %>
+</c:catch>
+<br>
+<c:if test="${myexception!=null}">
+    Exception ${myexception}
+</c:if>

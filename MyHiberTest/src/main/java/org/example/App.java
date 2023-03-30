@@ -16,6 +16,6 @@ public class App
         stuFirst.setAge(20);
         stuFirst.setGender("Male");
 
-        sessionFactory.close();
+        sessionFactory.close()
     }
 }

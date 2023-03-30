@@ -38,10 +38,11 @@
 </c:url>
 ${myURL}
 <p>
-//<c:import url = "http://google.com" var="mysite"/>
-//${mysite}
+<%--<c:import url = "http://google.com" var="mysite"/>
+${mysite}--%>
 
-//function
+<p>
+<!--function-->
 <c:set var = "theString" value = "I am a test String"/>
       <c:if test = "${fn:containsIgnoreCase(theString, 'test')}">
          <p>Found test string<p>

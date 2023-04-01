@@ -23,8 +23,21 @@ public class App
 //        session.getTransaction().commit();
 //        session.close();
 
-        Student obj = session.load(Student.class, Integer.parseInt("6"));
-        System.out.println(obj);
+        //update or get data
+//        Student obj = session.load(Student.class, Integer.parseInt("6")); //for ensure data should there then get otherwise it use load
+////        System.out.println(obj);
+//        session.beginTransaction();
+//        obj.setName("Renish");
+////        obj.setAge(50);
+//        session.getTransaction().commit();
+//        System.out.println(obj.getId());
+
+        Student s = new Student();
+        s.setId(6);
+        s.setName("Micheal");
+        session.beginTransaction();
+        session.update(s);
+        session.getTransaction().commit();
         sessionFactory.close();
     }
 }

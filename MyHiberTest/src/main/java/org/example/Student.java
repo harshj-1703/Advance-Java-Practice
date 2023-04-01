@@ -3,17 +3,19 @@ package org.example;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="student_details")
 public class Student {
     @Id
-    @Column
+    @Column(name="stu_id")
     private int id;
-    @Column
+    @Column(name = "stu_name",length = 50)
     private String name;
-    @Column
+    @Column(name = "stu_age")
     private int age;
-    @Column
+    @Column(name = "stu_gender",length = 10)
     private String gender;
 public Student(){
 
@@ -48,5 +50,10 @@ public Student(){
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public String toString()
+    {
+        return this.getId()+" "+this.getName()+" "+this.getGender()+" "+this.getAge();
     }
 }

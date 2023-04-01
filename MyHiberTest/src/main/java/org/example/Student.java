@@ -1,9 +1,6 @@
 package org.example;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="student_details")
@@ -17,9 +14,21 @@ public class Student {
     private int age;
     @Column(name = "stu_gender",length = 10)
     private String gender;
-public Student(){
 
-}
+    public Subject getSubject() {
+        return subject;
+    }
+
+    public void setSubject(Subject subject) {
+        this.subject = subject;
+    }
+
+    @OneToOne
+    private Subject subject;
+
+    public Student(){
+
+    }
     public int getId() {
         return id;
     }

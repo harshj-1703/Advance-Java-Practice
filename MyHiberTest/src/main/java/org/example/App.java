@@ -32,11 +32,26 @@ public class App
 //        session.getTransaction().commit();
 //        System.out.println(obj.getId());
 
-        Student s = new Student();
-        s.setId(6);
-        s.setName("Micheal");
+        //update method 2
+//        Student s = new Student();
+//        s.setId(6);
+//        s.setName("Micheal");
+//        session.beginTransaction();
+//        session.update(s);
+//        session.getTransaction().commit();
+
+        //delete
+//        Student s = session.load(Student.class, 6);
+//        session.beginTransaction();
+//        session.delete(s);
+//        session.getTransaction().commit();
+
+        Subject subject = new Subject();
+        subject.setId(1);
+        subject.setName("Advance JAVA");
+        subject.setDuration("6 months");
         session.beginTransaction();
-        session.update(s);
+        session.save(subject);
         session.getTransaction().commit();
         sessionFactory.close();
     }

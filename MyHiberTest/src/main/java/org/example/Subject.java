@@ -1,8 +1,7 @@
 package org.example;
 
-import org.hibernate.annotations.GeneratorType;
-
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="subject_details")
@@ -10,21 +9,21 @@ public class Subject {
     @Id
     @Column(name="sub_id")
     private int id;
-    @Column(name="sub_name",length = 50)
+    @Column(name="sub_name", length = 50)
     private String name;
-    @Column(name="subject_duration", length = 10)
+    @Column(name="duration", length=10)
     private String duration;
 
-    public Student getStudent() {
-        return student;
+    @ManyToMany
+    private List<Student> students;
+
+    public List<Student> getStudents() {
+        return students;
     }
 
-    public void setStudent(Student student) {
-        this.student = student;
+    public void setStudents(List<Student> students) {
+        this.students = students;
     }
-
-    @OneToOne
-    private Student student;
 
     public Subject() {
     }

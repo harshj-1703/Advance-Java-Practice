@@ -1,6 +1,7 @@
 package org.example;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="student_details")
@@ -8,27 +9,31 @@ public class Student {
     @Id
     @Column(name="stu_id")
     private int id;
-    @Column(name = "stu_name",length = 50)
+    @Column(name="stu_name",length = 50)
     private String name;
-    @Column(name = "stu_age")
+    @Column(name="stu_age")
     private int age;
-    @Column(name = "stu_gender",length = 10)
+    @Column(name="stu_gender",length = 10)
     private String gender;
 
-    public Subject getSubject() {
-        return subject;
+    @ManyToMany
+    @JoinTable(name="stu_sub_mapping",
+            joinColumns = {@JoinColumn(name="sub_id")},
+            inverseJoinColumns = {@JoinColumn(name="stu_id")}
+    )
+    private List<Subject> subjects;
+
+    public List<Subject> getSubjects() {
+        return subjects;
     }
 
-    public void setSubject(Subject subject) {
-        this.subject = subject;
+    public void setSubjects(List<Subject> subjects) {
+        this.subjects = subjects;
     }
 
-    @OneToOne
-    private Subject subject;
-
-    public Student(){
-
+    public Student() {
     }
+
     public int getId() {
         return id;
     }
@@ -61,8 +66,8 @@ public class Student {
         this.gender = gender;
     }
 
-    public String toString()
-    {
-        return this.getId()+" "+this.getName()+" "+this.getGender()+" "+this.getAge();
+    @Override
+    public String toString() {
+        return this.getId()+" " +this.getName()+" "+this.getGender()+" "+this.getAge();
     }
 }

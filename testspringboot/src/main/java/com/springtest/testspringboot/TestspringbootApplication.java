@@ -4,8 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
+@RestController
 public class TestspringbootApplication {
 
     public static void main(String[] args) {
@@ -22,7 +24,7 @@ public class TestspringbootApplication {
     {
         if (name != null)
         {
-            return "Hello" + name;
+            return "Hello " + name;
         }
         else
         {

@@ -1,5 +1,10 @@
 package com.springbootdemo.demo;
 
+// import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
+
+@Component
+// @Primary
 public class Staff implements Person {
     private int id;
     private String name;

@@ -1,4 +1,4 @@
-import javax.servlet.ServletException;
+import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,30 +21,18 @@ public class LCHttpServlet extends HttpServlet {
         System.out.println("from init");
     }
 
-//    @Override
-//    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        super.service(req,resp);
-//        System.out.println("From Service");
-//        PrintWriter out = resp.getWriter();
-//        out.println("Hi How are you?");
-//    }
-
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        PrintWriter out = resp.getWriter();
-//        int tableNumber = Integer.parseInt(req.getParameter("table"));
-//        for (int i=1;i<11;i++)
-//        {
-//            int tableOutput = tableNumber * i;
-//            out.println(tableNumber + " * "+ i + " = " + tableOutput);
-//        }
-
         PrintWriter out = resp.getWriter();
-        String date1 = req.getParameter("date");
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDateTime now = LocalDateTime.now();
-        out.println(now);
+        String ipAddress = req.getRemoteAddr();
+        if (ipAddress.equals("192.168.2.25")) {
+            String date1 = req.getParameter("date");
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            LocalDateTime now = LocalDateTime.now();
+            out.println(now);
+        } else {
+            resp.sendError(HttpServletResponse.SC_FORBIDDEN, "Access Denied");
+        }
     }
 
     @Override

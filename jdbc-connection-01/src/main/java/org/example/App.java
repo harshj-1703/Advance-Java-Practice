@@ -45,7 +45,6 @@ public class App
                 System.out.println(rs.getString(3));
             }
 
-
             //close connection
             conn.close();
 

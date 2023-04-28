@@ -4,23 +4,21 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name="student_details")
+@Table(name = "student_details")
 public class Student {
     @Id
-    @Column(name="stu_id")
+    @Column(name = "stu_id")
     private int id;
-    @Column(name="stu_name",length = 50)
+    @Column(name = "stu_name", length = 50)
     private String name;
-    @Column(name="stu_age")
+    @Column(name = "stu_age")
     private int age;
-    @Column(name="stu_gender",length = 10)
+    @Column(name = "stu_gender", length = 10)
     private String gender;
 
     @ManyToMany
-    @JoinTable(name="stu_sub_mapping",
-            joinColumns = {@JoinColumn(name="sub_id")},
-            inverseJoinColumns = {@JoinColumn(name="stu_id")}
-    )
+    @JoinTable(name = "stu_sub_mapping", joinColumns = { @JoinColumn(name = "sub_id") }, inverseJoinColumns = {
+            @JoinColumn(name = "stu_id") })
     private List<Subject> subjects;
 
     public List<Subject> getSubjects() {
@@ -68,6 +66,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return this.getId()+" " +this.getName()+" "+this.getGender()+" "+this.getAge();
+        return this.getId() + " " + this.getName() + " " + this.getGender() + " " + this.getAge();
     }
 }

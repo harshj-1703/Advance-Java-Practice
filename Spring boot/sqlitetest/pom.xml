@@ -8,7 +8,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0https://maven.apache.org/xs
 		<version>2.7.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.allysoftsolutions</groupId>
+	<groupId>com.hj</groupId>
 	<artifactId>sqlitetest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>sqlitetest</name>
@@ -44,6 +44,16 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0https://maven.apache.org/xs
 			<groupId>com.zsoltfabok</groupId>
 			<artifactId>sqlite-dialect</artifactId>
 			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-autoconfigure</artifactId>
+			<version>3.0.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot</artifactId>
+			<version>3.0.5</version>
 		</dependency>
 	</dependencies>
 
